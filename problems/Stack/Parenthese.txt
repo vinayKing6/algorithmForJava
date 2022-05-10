@@ -1,0 +1,9 @@
+int main(
+
+{
+   print f(this is a test);
+   [good]
+   [not good
+   [(])
+
+}
