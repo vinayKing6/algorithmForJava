@@ -24,6 +24,21 @@ public class inputKit {
         return results;
     }
 
+    public static Double[] getDoubles(String filename)throws IOException{
+        myQueue<Double> queue=new myQueue<Double>();
+        try(Scanner sc=new Scanner(new File(filename))){
+            while (sc.hasNextDouble()) {
+                queue.enqueue(sc.nextDouble());
+            }
+        }
+        Double[] results=new Double[queue.size()];
+        int i=0;
+        while (!queue.isEmpty()) {
+            results[i++]=queue.dequeue();
+        }
+        return results;
+    }
+
     public static String[] getStrings(String filename) throws IOException{
         StringBuilder stringBuilder=new StringBuilder();
         try(Scanner sc=new Scanner(new File(filename))){
@@ -48,11 +63,23 @@ public class inputKit {
         return results;
     }
 
+    public static String[] getLines(String filename,String splitor) throws IOException{
+        StringBuilder stringBuilder=new StringBuilder();
+        try(Scanner sc=new Scanner(new File(filename))){
+            while (sc.hasNextLine()) {
+                stringBuilder.append(sc.nextLine());
+                stringBuilder.append("\n");
+            }
+        }
+        String[] results=stringBuilder.toString().split(splitor);
+        return results;
+    }
+
     public static void main(String[] args){
         try{
-            Integer[] test=getInts(args[0]);
+            Double[] test=getDoubles(args[0]);
             for (int i = 0; i < test.length; i++) {
-                System.out.println(test[i]);
+                System.out.println(test[i].intValue());
                 
             }
         }catch(IOException e){

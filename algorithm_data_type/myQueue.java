@@ -1,5 +1,4 @@
 package algorithm.algorithm_data_type;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
