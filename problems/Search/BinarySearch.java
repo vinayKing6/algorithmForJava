@@ -1,6 +1,5 @@
 package algorithm.problems.Search;
 
-import java.util.function.Function;
 
 /**
  * BinarySearch

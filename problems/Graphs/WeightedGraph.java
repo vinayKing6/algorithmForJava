@@ -14,7 +14,6 @@ public class WeightedGraph {
     private int E;
     private myBag<Edge>[] adj;
 
-
     public WeightedGraph(int V){
         this.V=V;
         this.E=0;
@@ -45,7 +44,15 @@ public class WeightedGraph {
         }
     }
 
-    private void addEdge(Edge e){
+    public int V(){
+        return V;
+    }
+
+    public int E(){
+        return E;
+    }
+
+    public void addEdge(Edge e){
         int v=e.either();
         int w=e.other(v);
 
@@ -66,9 +73,10 @@ public class WeightedGraph {
     public myBag<Edge> edges(){
         myBag<Edge> results=new myBag<Edge>();
 
+        //only add one edge once
         for(int v=0;v<this.V;v++){
             for(Edge e:adj[v]){
-                if (e.either()>e.other(e.either())) {
+                if (v>e.other(v)) {
                     results.add(e);
                 }
             }

@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import algorithm.algorithm_data_type.myQueue;
 import algorithm.tools.inputKit;
-import network.test.charpter4.networkInterface;
 
 /**
  * BinaryTreeST
@@ -302,7 +301,7 @@ public class BinaryTreeST<Key extends Comparable<Key>,Value> {
         st.deleteMin();
         System.out.println(st.size()+" "+st.min()+" "+st.get(st.min()));
         System.out.println(st.check());
-        for (var key : st.keys()) {
+        for (String key : st.keys()) {
             System.out.println(key+" "+st.get(key));
         }
     }

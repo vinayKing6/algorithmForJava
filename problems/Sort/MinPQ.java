@@ -1,27 +1,36 @@
 package algorithm.problems.Sort;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import algorithm.tools.inputKit;
 
 /**
- * MaxPQ
+ * MinPQ
  */
-public class MaxPQ<T extends Comparable<T>> {
+public class MinPQ<T extends Comparable<T>> {
 
     //priority queue for time-complexity(ONLogN)
     private T[] pq;
     private int N;
 
-    public MaxPQ(int maxN){
+    public MinPQ(int maxN){
         //index 0 is not used which means array starts from 1
         pq=(T[]) new Comparable[maxN+1];
         N=0;
     }
 
-    public MaxPQ(){
+    public MinPQ(){
         pq=(T[]) new Comparable[2];
         N=0;
+    }
+
+    public MinPQ(Iterable<T> source){
+        this();
+
+        for (T t : source) {
+            insert(t);
+        }
     }
 
     public boolean isEmpty(){
@@ -51,7 +60,7 @@ public class MaxPQ<T extends Comparable<T>> {
         swim(N);
     }
 
-    public T delMax(){
+    public T delMin(){
         T temp=pq[1];
         exchange(1, N--);
         pq[N+1]=null;
@@ -63,12 +72,12 @@ public class MaxPQ<T extends Comparable<T>> {
         return temp;
     }
 
-    public T getMax(){
+    public T getMin(){
         return pq[1];
     }
 
     private void swim(int k){
-        while (k/2>=1 && less(k/2, k)) {
+        while (k/2>=1 && larger(k/2, k)) {
             exchange(k/2, k);
             k=k/2;
         }
@@ -77,10 +86,10 @@ public class MaxPQ<T extends Comparable<T>> {
     private void sink(int k){
         while (k*2<=N) {
             int j=2*k;
-            if (j<N&&less(j, j+1)) {
+            if (j<N&&larger(j, j+1)) {
                 j++;
             }
-            if (!less(k, j)) {
+            if (!larger(k, j)) {
                 break;
             }
             exchange(k, j);
@@ -88,8 +97,8 @@ public class MaxPQ<T extends Comparable<T>> {
         }
     }
 
-    private boolean less(int i,int j){
-        return pq[i].compareTo(pq[j])<0;
+    private boolean larger(int i,int j){
+        return pq[i].compareTo(pq[j])>0;
     }
 
     private void exchange(int i,int j){
@@ -100,15 +109,15 @@ public class MaxPQ<T extends Comparable<T>> {
 
     //test
     public static void main(String[] args)throws IOException{
-        Integer[] test=inputKit.getInts(System.getProperty("user.dir")+"/"+args[0]);
-        /* Integer[] test={2,5,1,0,0,6,11,666,7,10}; */
-        MaxPQ<Integer> pq=new MaxPQ<Integer>();
+        // Integer[] test=inputKit.getInts(System.getProperty("user.dir")+"/"+args[0]);
+        Integer[] test={2,5,1,0,0,6,11,666,7,10};
+        MinPQ<Integer> pq=new MinPQ<Integer>(Arrays.asList(test));
         for (int i = 0; i < test.length; i++) {
            pq.insert(test[i]); 
         }
 
         while (!pq.isEmpty()) {
-            System.out.println(pq.delMax());
+            System.out.println(pq.delMin());
         }
     }
 
