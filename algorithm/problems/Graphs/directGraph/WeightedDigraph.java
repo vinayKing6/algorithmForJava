@@ -1,4 +1,4 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.directGraph;
 import java.io.IOException;
 
 import algorithm.algorithm_data_type.myBag;

@@ -1,5 +1,9 @@
 package algorithm.problems.Graphs;
 
+import algorithm.problems.Graphs.directGraph.DiCycle;
+import algorithm.problems.Graphs.directGraph.SymbolDigraph;
+import algorithm.problems.Graphs.undirectGraph.Graph;
+
 /**
  * Topological
  */

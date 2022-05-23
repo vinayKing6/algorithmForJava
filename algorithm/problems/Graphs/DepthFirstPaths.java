@@ -1,6 +1,7 @@
 package algorithm.problems.Graphs;
 
 import algorithm.algorithm_data_type.myStack;
+import algorithm.problems.Graphs.undirectGraph.Graph;
 
 /**
  * DepthFirstPaths

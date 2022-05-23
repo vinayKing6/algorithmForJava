@@ -1,4 +1,4 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.directGraph;
 
 import algorithm.algorithm_data_type.myStack;
 import algorithm.problems.Sort.IndexMinPQ;

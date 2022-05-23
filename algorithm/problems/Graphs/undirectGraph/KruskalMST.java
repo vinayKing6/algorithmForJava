@@ -1,4 +1,4 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.undirectGraph;
 
 import algorithm.algorithm_data_type.myQueue;
 import algorithm.problems.Sort.MinPQ;

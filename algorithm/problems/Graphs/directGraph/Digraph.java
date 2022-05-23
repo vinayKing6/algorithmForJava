@@ -1,6 +1,9 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.directGraph;
 
 import algorithm.algorithm_data_type.myQueue;
+import algorithm.problems.Graphs.BreadthFirstPaths;
+import algorithm.problems.Graphs.DepthFirstPaths;
+import algorithm.problems.Graphs.undirectGraph.Graph;
 
 /**
  * Digraph
@@ -18,6 +21,7 @@ public class Digraph extends Graph{
     }
 
 
+    @Override
     public void addEdge(int v,int w){
         super.adj[v].add(w);
         super.E++;

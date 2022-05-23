@@ -1,6 +1,9 @@
 package algorithm.problems.Graphs;
 
 import algorithm.algorithm_data_type.myQueue;
+import algorithm.problems.Graphs.directGraph.Digraph;
+import algorithm.problems.Graphs.directGraph.*;
+import algorithm.problems.Graphs.undirectGraph.*;
 
 /**
  * LinkMap

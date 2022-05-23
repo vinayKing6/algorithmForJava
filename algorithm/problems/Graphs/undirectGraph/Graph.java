@@ -1,4 +1,4 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.undirectGraph;
 
 import java.io.IOException;
 
@@ -11,8 +11,8 @@ import algorithm.tools.inputKit;
 public class Graph {
 
     private int V;
-    int E;
-    myBag<Integer>[] adj;
+    public int E;
+    public myBag<Integer>[] adj;
 
     public Graph(int V){
         this.V=V;

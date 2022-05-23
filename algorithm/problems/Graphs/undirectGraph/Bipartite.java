@@ -1,4 +1,4 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.undirectGraph;
 
 /**
  * Bipartite

@@ -1,4 +1,6 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.directGraph;
+
+import algorithm.problems.Graphs.undirectGraph.Edge;
 
 /**
  * DirectedEdge

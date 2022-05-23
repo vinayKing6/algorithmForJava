@@ -1,4 +1,4 @@
-package algorithm.problems.Graphs;
+package algorithm.problems.Graphs.undirectGraph;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -7,15 +7,15 @@ import algorithm.problems.Search.RedBlackTree;
 import algorithm.tools.inputKit;
 
 /**
- * SymbolDiGraph
+ * SymbolGraph
  */
-public class SymbolDigraph {
+public class SymbolGraph {
 
     private RedBlackTree<String,Integer> ST;
     private String[] keys;
-    private Digraph G;
+    private Graph G;
 
-    public SymbolDigraph(String filepath,String splitor){
+    public SymbolGraph(String filepath,String splitor){
         ST=new RedBlackTree<String,Integer>();
 
         try{
@@ -35,7 +35,7 @@ public class SymbolDigraph {
                 keys[ST.get(key)]=key;
             }
 
-            G=new Digraph(ST.size());
+            G=new Graph(ST.size());
             for (int i = 0; i < lines.length; i++) {
                 String line=lines[i];
                 String[] items=line.split(splitor);
@@ -62,7 +62,7 @@ public class SymbolDigraph {
         return keys[index];
     }
 
-    public Digraph G(){
+    public Graph G(){
         return G;
     }
 
@@ -70,8 +70,8 @@ public class SymbolDigraph {
         try{
             String filepath=args[0];
             String splitor=args[1];
-            SymbolDigraph sg=new SymbolDigraph(filepath,splitor);
-            Digraph G=sg.G();
+            SymbolGraph sg=new SymbolGraph(filepath,splitor);
+            Graph G=sg.G();
 
             Scanner sc=new Scanner(System.in);
             String parameter;
@@ -84,7 +84,7 @@ public class SymbolDigraph {
                 System.out.println();
             }
         }catch(RuntimeException ex){
-            System.out.println("usage: java SymbolDigraph filepath splitor");
+            System.out.println("usage: java SymbolGraph filepath splitor");
         }
     }
     

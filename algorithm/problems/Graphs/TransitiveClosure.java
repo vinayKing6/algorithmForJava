@@ -1,5 +1,7 @@
 package algorithm.problems.Graphs;
 
+import algorithm.problems.Graphs.directGraph.Digraph;
+
 /**
  * TransitiveClosure
  * a Closure graph: for example ,in the original graph where v ---> w (not absolutely in the edge),
