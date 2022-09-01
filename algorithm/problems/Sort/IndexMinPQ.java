@@ -2,8 +2,6 @@ package algorithm.problems.Sort;
 
 import java.io.IOException;
 
-import algorithm.tools.inputKit;
-
 /**
  * IndexMinPQ
  */
@@ -21,36 +19,12 @@ public class IndexMinPQ<T extends Comparable<T>> {
         N=0;
     }
 
-    public IndexMinPQ(){
-        pq=(T[]) new Comparable[2];
-        index=new int[2];
-        N=0;
-    }
-
     public boolean isEmpty(){
         return N==0;
     }
 
     public int size(){
         return N;
-    }
-
-    private void resize(int max){
-        T[] temp=(T []) new Comparable[max];
-        int[] newIndex=new int[max];
-
-        try{
-            for (int i = 1; i <= N; i++) {
-                temp[index[i]]=pq[index[i]];
-                newIndex[i]=index[i];
-            }
-        }catch(ArrayIndexOutOfBoundsException e){
-            return;
-        }
-
-        pq=temp;
-        index=newIndex;
-       
     }
 
     public void insert(int i,T value){
@@ -132,7 +106,7 @@ public class IndexMinPQ<T extends Comparable<T>> {
     public static void main(String[] args)throws IOException{
         // Integer[] test=inputKit.getInts(System.getProperty("user.dir")+"/"+args[0]);
         Integer[] test={2,5,1,0,0,6,11,666,7,10};
-        IndexMinPQ<Integer> pq=new IndexMinPQ<Integer>();
+        IndexMinPQ<Integer> pq=new IndexMinPQ<Integer>(test.length);
         for (int i = 0; i < test.length; i++) {
            pq.insert(i,test[i]); 
         }

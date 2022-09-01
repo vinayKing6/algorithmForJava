@@ -2,8 +2,6 @@ package algorithm.problems.Sort;
 
 import java.io.IOException;
 
-import algorithm.tools.inputKit;
-
 /**
  * IndexMaxPQ
  */
@@ -21,36 +19,12 @@ public class IndexMaxPQ<T extends Comparable<T>> {
         N=0;
     }
 
-    public IndexMaxPQ(){
-        pq=(T[]) new Comparable[2];
-        index=new int[2];
-        N=0;
-    }
-
     public boolean isEmpty(){
         return N==0;
     }
 
     public int size(){
         return N;
-    }
-
-    private void resize(int max){
-        T[] temp=(T []) new Comparable[max];
-        int[] newIndex=new int[max];
-
-        try{
-            for (int i = 1; i <= N; i++) {
-                temp[index[i]]=pq[index[i]];
-                newIndex[i]=index[i];
-            }
-        }catch(ArrayIndexOutOfBoundsException e){
-            return;
-        }
-
-        pq=temp;
-        index=newIndex;
-       
     }
 
     public void insert(int i,T value){
